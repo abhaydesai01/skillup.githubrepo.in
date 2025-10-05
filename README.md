@@ -1,4 +1,4 @@
-# Atharva Gulhane - Portfolio Website
+# Skillup - Portfolio Website
 
 A modern, responsive portfolio website built with Angular and Tailwind CSS, featuring dynamic GitHub integration and a sleek design inspired by brittanychiang.com.
 
@@ -56,8 +56,8 @@ src/
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/AtharvaGulhane/AtharvaGulhane.github.io.git
-   cd AtharvaGulhane.github.io/portfolio-app
+   git clone URL
+   cd skillup.githubrepo.in/portfolio-app
    ```
 
 2. **Install dependencies**
@@ -158,7 +158,7 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 
 ## 📞 Contact
 
-- **Email**: gulhaneatharva@gmail.com
+- **Email**: abhayk_d@skillup.online
 - **GitHub**: [@AtharvaGulhane](https://github.com/AtharvaGulhane)
 - **Blog**: [TeknoGeeks](https://www.teknogeeks.in)
 
