@@ -1,0 +1,65 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    font-family: 'Inter', sans-serif;
+    @apply bg-background text-text-primary dark:bg-background-dark dark:text-text-primary-dark;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply px-6 py-3 border border-primary text-primary hover:bg-primary/10 hover:shadow-lg hover:shadow-primary/20 transition-all duration-300 rounded-md font-medium;
+  }
+  
+  .btn-secondary {
+    @apply px-6 py-3 bg-primary text-white dark:text-background-dark hover:bg-primary/90 hover:shadow-lg hover:shadow-primary/20 transition-all duration-300 rounded-md font-medium;
+  }
+  
+  .section-title {
+    @apply text-3xl md:text-4xl font-bold text-text-primary dark:text-text-primary-dark mb-8;
+  }
+  
+  .card {
+    @apply bg-white dark:bg-white/5 backdrop-blur-sm border border-gray-200/50 dark:border-white/10 rounded-xl p-6 hover:border-primary/50 hover:shadow-lg hover:shadow-gray-200/50 dark:hover:shadow-gray-900/20 transition-all duration-300 shadow-sm;
+  }
+  
+  .nav-link {
+    @apply text-text-secondary dark:text-text-secondary-dark hover:text-primary transition-colors duration-300 font-medium;
+  }
+  
+  .nav-link.active {
+    @apply text-primary font-semibold;
+  }
+  
+  .line-clamp-3 {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-gray-100 dark:bg-background-dark;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-gray-300 dark:bg-primary/50 rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-gray-400 dark:bg-primary;
+}

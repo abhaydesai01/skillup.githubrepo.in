@@ -1,0 +1,77 @@
+<!-- Hero Section -->
+<section
+  class="min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 relative bg-background dark:bg-background-dark">
+  <div class="max-w-4xl mx-auto text-center">
+    <!-- Greeting -->
+    <p class="text-primary font-mono text-sm mb-4 animate-fade-in">
+      Hi, my name is
+    </p>
+
+    <!-- Name -->
+    <h1
+      class="text-4xl sm:text-6xl lg:text-7xl font-bold text-text-primary dark:text-text-primary-dark mb-6 animate-slide-up">
+      Atharva Gulhane.
+    </h1>
+
+    <!-- Tagline -->
+    <h2
+      class="text-2xl sm:text-4xl lg:text-5xl font-bold text-text-secondary dark:text-text-secondary-dark mb-8 animate-slide-up">
+      Turning coffee and code into full-stack magic.
+    </h2>
+
+    <!-- Description -->
+    <p
+      class="text-lg text-text-secondary dark:text-text-secondary-dark max-w-2xl mx-auto mb-12 leading-relaxed animate-slide-up">
+      I'm a full-stack developer with industry experience in building secure, scalable web applications using Java, Angular and Spring Boot.
+      At Cybage Software, I've worked on containerized microservices, CI/CD pipelines, and cloud-ready deployments using
+      Docker and Kubernetes.
+      I'm passionate about clean code, performance, and developer-first tooling.
+    </p>
+
+    <!-- CTA Buttons -->
+    <div class="flex flex-col sm:flex-row gap-4 justify-center items-center animate-slide-up">
+      <a routerLink="/projects" class="btn-primary" type="button">
+        View My Work
+      </a>
+      <a routerLink="/contact" class="btn-secondary" type="button">
+        Get In Touch
+      </a>
+    </div>
+
+    <!-- Scroll Indicator -->
+    <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+      <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+      </svg>
+    </div>
+  </div>
+</section>
+
+<!-- Projects Section -->
+<section class="py-20 px-4 sm:px-6 lg:px-8 bg-white dark:bg-[#111827] border-t border-gray-200 dark:border-white/10">
+  <div class="text-center mb-12">
+    <h2 class="section-title">🛠️ Few Projects</h2>
+    <p class="text-text-secondary dark:text-text-secondary-dark text-lg max-w-2xl mx-auto">
+      A glimpse into the apps and systems I've crafted — from scalable backend services to intuitive frontend
+      interfaces.
+    </p>
+  </div>
+  <app-projects></app-projects>
+  <p class="text-text-secondary dark:text-text-secondary-dark text-lg max-w-2xl mx-auto">
+  Building modern web apps, fueled by caffeine and curiosity.</p>
+</section>
+
+<!-- Hobbies Section -->
+<section
+  class="py-20 px-4 sm:px-6 lg:px-8 bg-background dark:bg-background-dark border-t border-gray-200 dark:border-white/10">
+  <div class="text-center mb-12">
+    <h2 class="section-title">🎯 Hobbies & Interests</h2>
+    <p class="text-text-secondary dark:text-text-secondary-dark text-lg max-w-2xl mx-auto">
+      I believe in a balanced life. When I’m not coding, I find joy in capturing moments and riding through nature's
+      best routes.
+    </p>
+  </div>
+  <app-hobbies></app-hobbies>
+</section>
+
+<!-- Contact Section --> 

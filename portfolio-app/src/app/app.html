@@ -1,0 +1,73 @@
+<div class="min-h-screen bg-background dark:bg-background-dark">
+  <!-- Navigation -->
+  <nav class="fixed top-0 w-full bg-background/95 dark:bg-background-dark/95 backdrop-blur-md border-b border-gray-200/50 dark:border-white/10 shadow-sm dark:shadow-gray-900/20 z-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-16">
+        <!-- Logo -->
+        <div class="flex-shrink-0">
+          <a routerLink="/" class="text-2xl font-bold text-primary hover:text-primary/80 transition-colors duration-300">AG</a>
+        </div>
+
+        <!-- Desktop Navigation -->
+        <div class="hidden md:block">
+          <div class="ml-10 flex items-baseline space-x-8">
+            <a routerLink="/" routerLinkActive="nav-link active" [routerLinkActiveOptions]="{exact: true}" class="nav-link">Home</a>
+            <a routerLink="/projects" routerLinkActive="nav-link active" class="nav-link">Projects</a>
+            <a routerLink="/skills" routerLinkActive="nav-link active" class="nav-link">Skills</a>
+            <a routerLink="/experience" routerLinkActive="nav-link active" class="nav-link">Experience</a>
+            <a routerLink="/contact" routerLinkActive="nav-link active" class="nav-link">Contact</a>
+            <a routerLink="/blog" routerLinkActive="nav-link active" class="nav-link">Blog</a>
+            <a routerLink="/certificates" routerLinkActive="nav-link active" class="nav-link">Certificates</a>
+          </div>
+    </div>
+
+        <!-- Dark Mode Toggle -->
+        <div class="flex items-center space-x-4">
+          <button 
+            (click)="toggleDarkMode()" 
+            class="p-2 rounded-lg bg-gray-100 hover:bg-gray-200 dark:bg-white/10 dark:hover:bg-white/20 transition-all duration-300 shadow-sm hover:shadow-md"
+            [attr.aria-label]="isDarkMode ? 'Switch to light mode' : 'Switch to dark mode'"
+          >
+            <svg *ngIf="isDarkMode" class="w-5 h-5 text-primary" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" clip-rule="evenodd"></path>
+            </svg>
+            <svg *ngIf="!isDarkMode" class="w-5 h-5 text-primary" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
+          </svg>
+          </button>
+
+          <!-- Mobile menu button -->
+          <button 
+            (click)="toggleMobileMenu()" 
+            class="md:hidden p-2 rounded-lg bg-gray-100 hover:bg-gray-200 dark:bg-white/10 dark:hover:bg-white/20 transition-all duration-300 shadow-sm hover:shadow-md"
+            [attr.aria-label]="isMobileMenuOpen ? 'Close menu' : 'Open menu'"
+          >
+            <svg *ngIf="!isMobileMenuOpen" class="w-6 h-6 text-text-primary dark:text-text-primary-dark" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+          </svg>
+            <svg *ngIf="isMobileMenuOpen" class="w-6 h-6 text-text-primary dark:text-text-primary-dark" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+          </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mobile Navigation -->
+    <div *ngIf="isMobileMenuOpen" class="md:hidden bg-background/95 dark:bg-background-dark/95 backdrop-blur-md border-t border-gray-200/50 dark:border-white/10 shadow-lg">
+      <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+        <a routerLink="/" routerLinkActive="nav-link active" [routerLinkActiveOptions]="{exact: true}" class="nav-link block px-3 py-2 rounded-md hover:bg-gray-100 dark:hover:bg-white/5 transition-colors duration-200" (click)="closeMobileMenu()">Home</a>
+        <a routerLink="/projects" routerLinkActive="nav-link active" class="nav-link block px-3 py-2 rounded-md hover:bg-gray-100 dark:hover:bg-white/5 transition-colors duration-200" (click)="closeMobileMenu()">Projects</a>
+        <a routerLink="/skills" routerLinkActive="nav-link active" class="nav-link block px-3 py-2 rounded-md hover:bg-gray-100 dark:hover:bg-white/5 transition-colors duration-200" (click)="closeMobileMenu()">Skills</a>
+        <a routerLink="/experience" routerLinkActive="nav-link active" class="nav-link block px-3 py-2 rounded-md hover:bg-gray-100 dark:hover:bg-white/5 transition-colors duration-200" (click)="closeMobileMenu()">Experience</a>
+        <a routerLink="/contact" routerLinkActive="nav-link active" class="nav-link block px-3 py-2 rounded-md hover:bg-gray-100 dark:hover:bg-white/5 transition-colors duration-200" (click)="closeMobileMenu()">Contact</a>
+        <a routerLink="/blog" routerLinkActive="nav-link active" class="nav-link block px-3 py-2 rounded-md hover:bg-gray-100 dark:hover:bg-white/5 transition-colors duration-200" (click)="closeMobileMenu()">Blog</a>
+    </div>
+  </div>
+  </nav>
+
+  <!-- Main Content -->
+  <main class="pt-16">
+    <router-outlet></router-outlet>
+</main>
+</div>

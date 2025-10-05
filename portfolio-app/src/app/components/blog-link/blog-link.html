@@ -1,0 +1,119 @@
+<section class="min-h-screen py-20 px-4 sm:px-6 lg:px-8">
+  <div class="max-w-4xl mx-auto text-center">
+    <!-- Section Header -->
+    <div class="mb-16">
+      <h2 class="section-title">My Blog</h2>
+      <p class="text-text-secondary dark:text-text-secondary-dark text-lg max-w-2xl mx-auto">
+        I write about technology, software development, and my experiences in the tech industry. 
+        Check out my latest articles and insights.
+      </p>
+    </div>
+
+    <!-- Blog Preview -->
+    <div class="card max-w-2xl mx-auto mb-12">
+      <div class="w-16 h-16 bg-primary/10 rounded-lg flex items-center justify-center mx-auto mb-6">
+        <svg class="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
+        </svg>
+      </div>
+      
+      <h3 class="text-2xl font-bold text-text-primary dark:text-text-primary-dark mb-4">TeknoGeeks</h3>
+      <p class="text-text-secondary dark:text-text-secondary-dark mb-6">
+        My personal blog where I share insights about software development, 
+        technology trends, and my journey in the tech world.
+      </p>
+      
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a 
+          href="https://www.teknogeeks.in" 
+          target="_blank" 
+          rel="noopener noreferrer"
+          class="btn-secondary inline-flex items-center justify-center"
+        >
+          <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+          </svg>
+          Visit Blog
+        </a>
+        
+        <a 
+          href="https://www.teknogeeks.in/feed" 
+          target="_blank" 
+          rel="noopener noreferrer"
+          class="btn-primary inline-flex items-center justify-center"
+        >
+          <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 5c7.18 0 13 5.82 13 13M6 11a7 7 0 017 7m-6 0a1 1 0 11-2 0 1 1 0 012 0z"></path>
+          </svg>
+          RSS Feed
+        </a>
+      </div>
+    </div>
+
+    <!-- Recent Posts Preview -->
+    <div class="text-left max-w-4xl mx-auto">
+      <h3 class="text-2xl font-bold text-text-primary dark:text-text-primary-dark mb-8 text-center">Recent Posts</h3>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div class="card group cursor-pointer" (click)="openBlog()">
+          <div class="flex items-center justify-between mb-4">
+            <span class="text-primary text-sm font-medium">Technology</span>
+            <span class="text-text-secondary dark:text-text-secondary-dark text-sm">2 days ago</span>
+          </div>
+          <h4 class="text-xl font-bold text-text-primary dark:text-text-primary-dark mb-3 group-hover:text-primary transition-colors">
+            Building Modern Web Applications with Angular
+          </h4>
+          <p class="text-text-secondary dark:text-text-secondary-dark mb-4 line-clamp-3">
+            Exploring the latest features in Angular and how to build scalable, 
+            maintainable web applications using modern development practices.
+          </p>
+          <div class="flex items-center text-primary text-sm font-medium">
+            Read More
+            <svg class="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+            </svg>
+          </div>
+        </div>
+
+        <div class="card group cursor-pointer" (click)="openBlog()">
+          <div class="flex items-center justify-between mb-4">
+            <span class="text-primary text-sm font-medium">Development</span>
+            <span class="text-text-secondary dark:text-text-secondary-dark text-sm">1 week ago</span>
+          </div>
+          <h4 class="text-xl font-bold text-text-primary dark:text-text-primary-dark mb-3 group-hover:text-primary transition-colors">
+            The Future of Frontend Development
+          </h4>
+          <p class="text-text-secondary dark:text-text-secondary-dark mb-4 line-clamp-3">
+            Discussing emerging trends in frontend development, from new frameworks 
+            to performance optimization techniques and developer experience.
+          </p>
+          <div class="flex items-center text-primary text-sm font-medium">
+            Read More
+            <svg class="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+            </svg>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Newsletter Signup -->
+    <div class="mt-16 card max-w-2xl mx-auto">
+      <h3 class="text-2xl font-bold text-text-primary dark:text-text-primary-dark mb-4">Stay Updated</h3>
+      <p class="text-text-secondary dark:text-text-secondary-dark mb-6">
+        Subscribe to my newsletter to get notified about new blog posts and tech insights.
+      </p>
+      
+      <div class="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
+        <input 
+          type="email" 
+          placeholder="your.email@example.com"
+          class="flex-1 px-4 py-3 bg-gray-50 dark:bg-white/5 border border-gray-200 dark:border-white/10 rounded-lg text-text-primary dark:text-text-primary-dark placeholder-text-secondary dark:placeholder-text-secondary-dark focus:outline-none focus:border-primary transition-colors"
+        >
+        <button class="btn-secondary whitespace-nowrap">
+          Subscribe
+        </button>
+      </div>
+    </div>
+  </div>
+</section>

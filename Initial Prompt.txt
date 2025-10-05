@@ -1,0 +1,173 @@
+Project: Angular Multi-Page Portfolio Website with GitHub Integration
+
+Objective:
+Build a modern, responsive, multi-page portfolio website using Angular and CSS, featuring:
+- Dynamic GitHub repo and README fetching
+- Auto-generated skills based on repo content and resume
+- Multiple sections: Home, Projects, Skills, Experience, Contact, Blog
+- Dark mode toggle with theme preference persistence
+- Deployment to GitHub Pages
+
+GitHub Username: AtharvaGulhane
+Blog URL: https://www.teknogeeks.in
+
+Tech Stack:
+- Angular (with routing, version 17 or latest)
+- CSS (custom styles, responsive design)
+- GitHub REST API (for repos and README)
+- ngx-markdown + marked.js (to render markdown)
+- angular-cli-ghpages (to deploy to GitHub Pages)
+
+Folder Structure:
+src/
+├── app/
+│   ├── components/
+│   │   ├── home/
+│   │   ├── projects/
+│   │   ├── skills/
+│   │   ├── experience/
+│   │   ├── contact/
+│   │   └── blog-link/
+│   ├── services/
+│   │   └── github-api.service.ts
+│   ├── app-routing.module.ts
+│   └── app.component.ts / .html / .css
+├── assets/
+├── styles.css (include light/dark theme styles here)
+
+Steps:
+
+0. Create GitHub Repository:
+   - Name: AtharvaGulhane.github.io
+   - Public, without README/.gitignore
+   - Later push built Angular app to this repo
+
+1. Create Angular project:
+   ng new portfolio-app --routing --style=css
+   cd portfolio-app
+
+2. Install dependencies:
+   npm install ngx-markdown marked
+   ng add angular-cli-ghpages
+
+3. Generate components:
+   ng generate component components/home
+   ng generate component components/projects
+   ng generate component components/skills
+   ng generate component components/experience
+   ng generate component components/contact
+   ng generate component components/blog-link
+
+4. Create GitHub API service:
+   ng generate service services/github-api
+
+5. Setup Routing (Multi-Page Navigation):
+   - Use Angular Router and define all routes in app-routing.module.ts
+   - Create responsive navbar in app.component.html
+
+6. GitHub API Instructions:
+   - Fetch public repositories only from: https://api.github.com/users/AtharvaGulhane/repos
+   - Fetch README using: https://api.github.com/repos/AtharvaGulhane/<repo-name>/readme
+   - No authentication token is needed
+   - Decode base64 README content and render it using ngx-markdown
+
+7. README.md Rendering:
+   - Use [markdown] directive from ngx-markdown to show decoded README content
+
+8. Dark Mode Toggle:
+   - Implement a button in the header to toggle light/dark mode using a CSS class on <body>
+   - Use localStorage to remember the selected theme
+
+9. Skills Component:
+   - Extract 'language' field from repo JSON
+   - Combine with static skills from resume
+   - Avoid trying to analyze actual repo source code
+
+10. Projects Component:
+   - List all repos with names, links, descriptions, stars (optional)
+   - Render README.md when user selects a project
+   - Optional: allow filtering by tech stack or tags
+
+11. Experience & Education:
+   - Use static data from resume
+   - Format as cards or a timeline
+
+12. Contact:
+   - Include email (gulhaneatharva@gmail.com), LinkedIn, GitHub links
+   - Add simple contact form (optional)
+
+13. Blog Link:
+   - Link to https://www.teknogeeks.in
+   - Optionally embed blog RSS posts in a future enhancement
+
+14. Responsive Design:
+   - Ensure the entire website works on mobile, tablet, and desktop
+
+15. Deployment to GitHub Pages:
+   ng build --configuration production
+   npx angular-cli-ghpages --dir=dist/portfolio-app
+
+Prompt to Reuse Later:
+------------------------------------
+I want to build a modern, multi-page portfolio website using Angular and CSS, and host it on GitHub Pages.
+
+The site should:
+- Use Angular services to dynamically fetch all my public GitHub repositories using the GitHub API
+- Render each repository’s README.md using ngx-markdown and marked.js
+- Automatically showcase my skills based on technologies used in my repos and from my resume
+- Include a dark mode toggle using CSS class switching and localStorage persistence
+- Have a multi-page layout using Angular Router, with sections: Home, Projects, Skills, Experience, Blog (https://www.teknogeeks.in), Contact
+- Be responsive and mobile-friendly
+- Be deployable to GitHub Pages under: AtharvaGulhane.github.io
+
+My GitHub username is: AtharvaGulhane
+Please generate the full Angular project structure, component code, services, routing, and deployment instructions.
+
+---
+
+Modern Aesthetic & Design (Inspired by brittanychiang.com)
+
+Design Objective:
+Recreate a sleek, professional aesthetic similar to https://brittanychiang.com/ using Angular + Tailwind CSS.
+
+Design Breakdown:
+1. Use Tailwind CSS for utility-first modern design
+   - Install: npm install -D tailwindcss postcss autoprefixer
+   - Initialize: npx tailwindcss init
+   - Configure dark mode using class strategy
+   - Apply fonts via Google Fonts (e.g., Inter)
+
+2. Sections to Implement:
+   - Home/Hero (fullscreen intro with name, tagline)
+   - About (short paragraph + skills summary)
+   - Experience (timeline layout)
+   - Projects (featured projects with GitHub README previews, tech tags, links)
+   - Contact (simple section with email and social links)
+   - Blog (external link to https://www.teknogeeks.in)
+
+3. Styling Recommendations:
+   - Background: dark theme (#0a192f) with subtle gradients
+   - Accent color: teal (#64ffda)
+   - Font colors: white (#ccd6f6), soft gray (#8892b0)
+   - Use Tailwind hover effects and transitions
+   - Buttons: border outline with glow on hover
+   - Cards: smooth shadow/scale effect
+
+4. Animations & Interactions:
+   - Use @angular/animations or AOS.js for scroll animations
+   - Smooth scroll navigation with active link highlight
+   - Use IntersectionObserver for lazy animations
+
+5. Responsiveness:
+   - Mobile-friendly layout with Tailwind’s sm/md/lg breakpoints
+   - Use hamburger menu for nav on small screens
+
+6. Bonus Enhancements (Future Scope):
+   - Scroll spy to highlight nav links while scrolling
+   - Optional light mode toggle
+   - Blog post integration using RSS from teknogeeks.in
+
+To instruct a tool like Cursor IDE:
+- Ask it to scaffold an Angular app using TailwindCSS and dark theme layout inspired by brittanychiang.com
+- Provide sample hero and project components with Tailwind classes
+- Mention font setup, animations, and layout behavior as per this design spec

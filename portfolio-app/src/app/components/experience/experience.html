@@ -1,0 +1,101 @@
+<section class="min-h-screen py-20 px-4 sm:px-6 lg:px-8">
+  <div class="max-w-4xl mx-auto">
+    <!-- Section Header -->
+    <div class="text-center mb-16">
+      <h2 class="section-title">Experience & Education</h2>
+      <p class="text-text-secondary dark:text-text-secondary-dark text-lg max-w-2xl mx-auto">
+        My professional journey and educational background that has shaped my career in software development.
+      </p>
+    </div>
+
+    <!-- Timeline -->
+    <div class="relative">
+      <!-- Timeline Line -->
+      <div class="absolute left-8 top-0 bottom-0 w-0.5 bg-gray-300 dark:bg-white/10"></div>
+
+      <!-- Timeline Items -->
+      <div class="space-y-12">
+        <!-- Work Experience -->
+        <div *ngFor="let experience of workExperience; trackBy: trackByExperience" class="relative">
+          <!-- Timeline Dot -->
+          <div
+            class="absolute left-6 w-4 h-4 bg-primary rounded-full border-4 border-background dark:border-background-dark">
+          </div>
+
+          <!-- Content -->
+          <div class="ml-16">
+            <div class="card">
+              <!-- Header -->
+              <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-4">
+                <div>
+                  <h3 class="text-xl font-bold text-text-primary dark:text-text-primary-dark">{{ experience.title }}
+                  </h3>
+                  <p class="text-primary font-medium">{{ experience.company }}</p>
+                </div>
+                <span class="text-text-secondary dark:text-text-secondary-dark text-sm mt-2 sm:mt-0">{{
+                  experience.period }}</span>
+              </div>
+
+              <!-- Description -->
+              <p class="text-text-secondary dark:text-text-secondary-dark mb-4">{{ experience.description }}</p>
+
+              <!-- Technologies -->
+              <div class="flex flex-wrap gap-2">
+                <span *ngFor="let tech of experience.technologies"
+                  class="px-2 py-1 bg-primary/10 text-primary text-xs rounded">
+                  {{ tech }}
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Education -->
+        <div *ngFor="let education of educationHistory; trackBy: trackByEducation" class="relative">
+          <!-- Timeline Dot -->
+          <div
+            class="absolute left-6 w-4 h-4 bg-primary rounded-full border-4 border-background dark:border-background-dark">
+          </div>
+
+          <!-- Content -->
+          <div class="ml-16">
+            <div class="card">
+              <!-- Header -->
+              <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-4">
+                <div>
+                  <h3 class="text-xl font-bold text-text-primary dark:text-text-primary-dark">{{ education.degree }}
+                  </h3>
+                  <p class="text-primary font-medium">{{ education.institution }}</p>
+                </div>
+                <span class="text-text-secondary dark:text-text-secondary-dark text-sm mt-2 sm:mt-0">{{ education.period
+                  }}</span>
+              </div>
+
+              <!-- Description -->
+              <p class="text-text-secondary dark:text-text-secondary-dark mb-4">{{ education.description }}</p>
+
+              <!-- GPA/Details -->
+              <div *ngIf="education.gpa" class="text-text-secondary dark:text-text-secondary-dark text-sm">
+                GPA: {{ education.gpa }}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Download Resume -->
+    <div class="text-center mt-16">
+      <button (click)="downloadResume()" class="btn-primary inline-flex items-center">
+        <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+            d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z">
+          </path>
+        </svg>
+        View Resume
+      </button>
+    </div>
+
+
+  </div>
+</section>

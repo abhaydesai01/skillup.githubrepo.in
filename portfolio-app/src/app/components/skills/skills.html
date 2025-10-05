@@ -1,0 +1,103 @@
+<section class="min-h-screen py-20 px-4 sm:px-6 lg:px-8">
+  <div class="max-w-7xl mx-auto">
+    <!-- Section Header -->
+    <div class="text-center mb-16">
+      <h2 class="section-title">Skills & Technologies</h2>
+      <p class="text-text-secondary dark:text-text-secondary-dark text-lg max-w-2xl mx-auto">
+        Here are the technologies I've been working with recently. This list is dynamically generated from my GitHub repositories and includes additional skills from my experience.
+      </p>
+    </div>
+
+    <!-- Skills Categories -->
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+      <!-- Programming Languages -->
+      <div class="card">
+        <h3 class="text-2xl font-bold text-text-primary dark:text-text-primary-dark mb-6 flex items-center">
+          <svg class="w-6 h-6 mr-3 text-primary" fill="currentColor" viewBox="0 0 20 20">
+            <path fill-rule="evenodd" d="M12.316 3.051a1 1 0 01.633 1.265l-4 12a1 1 0 11-1.898-.632l4-12a1 1 0 011.265-.633zM5.707 6.293a1 1 0 010 1.414L3.414 10l2.293 2.293a1 1 0 11-1.414 1.414l-3-3a1 1 0 010-1.414l3-3a1 1 0 011.414 0zm8.586 0a1 1 0 011.414 0l3 3a1 1 0 010 1.414l-3 3a1 1 0 11-1.414-1.414L16.586 10l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+          </svg>
+          Programming Languages
+        </h3>
+        <div class="flex flex-wrap gap-3">
+          <span *ngFor="let language of programmingLanguages" class="px-3 py-2 bg-primary/10 text-primary rounded-lg text-sm font-medium">
+            {{ language }}
+          </span>
+        </div>
+      </div>
+
+      <!-- Frontend Technologies -->
+      <div class="card">
+        <h3 class="text-2xl font-bold text-text-primary dark:text-text-primary-dark mb-6 flex items-center">
+          <svg class="w-6 h-6 mr-3 text-primary" fill="currentColor" viewBox="0 0 20 20">
+            <path fill-rule="evenodd" d="M3 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"></path>
+          </svg>
+          Frontend Technologies
+        </h3>
+        <div class="flex flex-wrap gap-3">
+          <span *ngFor="let tech of frontendTechnologies" class="px-3 py-2 bg-primary/10 text-primary rounded-lg text-sm font-medium">
+            {{ tech }}
+          </span>
+        </div>
+      </div>
+
+      <!-- Backend Technologies -->
+      <div class="card">
+        <h3 class="text-2xl font-bold text-text-primary dark:text-text-primary-dark mb-6 flex items-center">
+          <svg class="w-6 h-6 mr-3 text-primary" fill="currentColor" viewBox="0 0 20 20">
+            <path fill-rule="evenodd" d="M2 5a2 2 0 012-2h8a2 2 0 012 2v10a2 2 0 002 2H4a2 2 0 01-2-2V5zm3 2h6v4H5V7zm8 8h2a1 1 0 110 2h-2a1 1 0 110-2z" clip-rule="evenodd"></path>
+          </svg>
+          Backend Technologies
+        </h3>
+        <div class="flex flex-wrap gap-3">
+          <span *ngFor="let tech of backendTechnologies" class="px-3 py-2 bg-primary/10 text-primary rounded-lg text-sm font-medium">
+            {{ tech }}
+          </span>
+        </div>
+      </div>
+
+      <!-- Tools & Platforms -->
+      <div class="card">
+        <h3 class="text-2xl font-bold text-text-primary dark:text-text-primary-dark mb-6 flex items-center">
+          <svg class="w-6 h-6 mr-3 text-primary" fill="currentColor" viewBox="0 0 20 20">
+            <path fill-rule="evenodd" d="M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM6.293 6.707a1 1 0 010-1.414l3-3a1 1 0 011.414 0l3 3a1 1 0 01-1.414 1.414L11 5.414V13a1 1 0 11-2 0V5.414L7.707 6.707a1 1 0 01-1.414 0z" clip-rule="evenodd"></path>
+          </svg>
+          Tools & Platforms
+        </h3>
+        <div class="flex flex-wrap gap-3">
+          <span *ngFor="let tool of toolsAndPlatforms" class="px-3 py-2 bg-primary/10 text-primary rounded-lg text-sm font-medium">
+            {{ tool }}
+          </span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Skills from GitHub -->
+    <div *ngIf="githubSkills.length > 0" class="mt-16">
+      <div class="text-center mb-8">
+        <h3 class="text-2xl font-bold text-text-primary dark:text-text-primary-dark mb-4">Technologies from My Projects</h3>
+        <p class="text-text-secondary dark:text-text-secondary-dark">
+          These technologies are automatically detected from my GitHub repositories
+        </p>
+      </div>
+      <div class="flex flex-wrap gap-3 justify-center">
+        <span *ngFor="let skill of githubSkills" class="px-3 py-2 bg-gray-100 dark:bg-white/5 text-text-secondary dark:text-text-secondary-dark rounded-lg text-sm font-medium border border-gray-200 dark:border-white/10">
+          {{ skill }}
+        </span>
+      </div>
+    </div>
+
+    <!-- Loading State -->
+    <div *ngIf="loading" class="text-center py-12">
+      <div class="inline-block animate-spin rounded-full h-8 w-8 border-b-2 border-primary"></div>
+      <p class="text-text-secondary dark:text-text-secondary-dark mt-4">Loading skills...</p>
+    </div>
+
+    <!-- Error State -->
+    <div *ngIf="error" class="text-center py-12">
+      <p class="text-red-400 mb-4">{{ error }}</p>
+      <button (click)="loadSkills()" class="btn-primary">
+        Try Again
+      </button>
+    </div>
+  </div>
+</section>
