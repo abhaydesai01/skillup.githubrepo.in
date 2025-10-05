@@ -159,8 +159,7 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 ## 📞 Contact
 
 - **Email**: abhayk_d@skillup.online
-- **GitHub**: [@AtharvaGulhane](https://github.com/AtharvaGulhane)
-- **Blog**: [TeknoGeeks](https://www.teknogeeks.in)
+
 
 ---
 
